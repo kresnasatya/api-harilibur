@@ -1,0 +1,24 @@
+{
+  "name": "api-harilibur",
+  "version": "1.0.0",
+  "description": "Ambil data daftar hari libur nasional Indonesia",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scrape": "node services/scraper.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyakresna/api-harilibur.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satyakresna/api-harilibur/issues"
+  },
+  "homepage": "https://github.com/satyakresna/api-harilibur#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "jsdom": "^16.6.0"
+  }
+}
