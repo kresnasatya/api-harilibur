@@ -24,6 +24,14 @@ Tanggal merah di kalender bisa menyenangkan semua orang.
 
 Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `200` dengan isian array kosong (`[]`)!
 
+## Sumber Data
+
+Terima kasih [kalenderbali.org](http://kalenderbali.org) telah menyediakan data hari libur. 🙏🏻
+
+## Pertanyaan
+
+- Tahun yang saya cari tidak ada. Bagaimana caranya? Saat pertama kali api ini dibuat, tahun-tahun yang tersedia adalah di tahun 1995, 2015 - 2022. Jika tidak ada, silakan [buat isu](https://github.com/satyakresna/api-harilibur/issues) dan saya akan berusaha untuk menambahkan tahun yang dicari. 🙏🏻
+
 ## Apresiasi
 
 Kalau API Hari Libur ini bermanfaat bagi kamu tolong apresiasi saya di [saweria.co](https://saweria.co/satyakresna) atau [trakteer.id](https://trakteer.id/satyakresna) ya!
