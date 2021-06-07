@@ -5,18 +5,18 @@
     },
     "builds": [
       {
-        "src": "backend/api/**",
+        "src": "api/**",
         "use": "@vercel/node"
       },
       {
-        "src": "frontend/**",
+        "src": "public/**",
         "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/api",
-        "dest": "backend/api/index.js",
+        "dest": "api/index.js",
         "headers": {
             "Cache-Control": "public, s-maxage=60, stale-while-revalidate",
             "Access-Control-Allow-Origin": "*"
@@ -24,15 +24,15 @@
       },
       {
         "src": "/css/(.*)",
-        "dest": "frontend/css/$1"
+        "dest": "public/css/$1"
       },
       {
         "src": "/(.*).(js)",
-        "dest": "frontend/$1.$2"
+        "dest": "public/$1.$2"
       },
       {
         "src": "/(.*)",
-        "dest": "frontend/index.html"
+        "dest": "public/index.html"
       }
     ]
 }
