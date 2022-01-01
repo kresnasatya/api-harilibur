@@ -1,8 +1,8 @@
 name: Ambil data daftar hari libur
 on:
   schedule:
-    # Jalankan setiap tanggal 1 Desember.
-    - cron: '0 0 1 12 *'
+    # Jalankan setiap tanggal 1 Januari.
+    - cron: '0 0 1 1 *'
   workflow_dispatch:
 
 jobs:
