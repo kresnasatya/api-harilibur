@@ -30,7 +30,9 @@ Terima kasih [kalenderbali.org](http://kalenderbali.org) telah menyediakan data 
 
 ## Pertanyaan
 
-- Tahun yang saya cari tidak ada. Bagaimana caranya? Saat pertama kali api ini dibuat, tahun-tahun yang tersedia adalah di tahun 1995, 2015 - 2022. Jika tidak ada, silakan [buat isu](https://github.com/satyakresna/api-harilibur/issues) dan saya akan berusaha untuk menambahkan tahun yang dicari. 🙏🏻
+Tahun yang saya cari tidak ada, bagaimana caranya?
+
+API ini menggunakan fitur **schedule** dari GitHub Actions dan Workflows. Jadi, setiap tanggal 1 Januari repositori ini akan melakukan scraping hari libur untuk tahun mendatang. Misalnya, sekarang tanggal 1 Januari 2022 maka repositori ini akan melakukan scraping hari libur untuk tahun 2023. Jika tidak ada tahun yang Anda cari silakan [buat isu](https://github.com/satyakresna/api-harilibur/issues) dan saya akan berusaha untuk menambahkan tahun yang dicari. 🙏🏻
 
 ## Apresiasi
 
