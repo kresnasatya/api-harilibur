@@ -1,7 +1,7 @@
 {
   "name": "api-harilibur",
   "version": "1.0.0",
-  "description": "Ambil data daftar hari libur nasional Indonesia",
+  "description": "API hari libur nasional Indonesia",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scrape": "node services/scraper.js"
