@@ -37,3 +37,7 @@ API ini menggunakan fitur **schedule** dari GitHub Actions dan Workflows. Jadi, 
 ## Apresiasi
 
 Kalau API Hari Libur ini bermanfaat bagi kamu tolong apresiasi saya di [saweria.co](https://saweria.co/satyakresna) atau [trakteer.id](https://trakteer.id/satyakresna) ya!
+
+## Pengakuan
+
+Ide ini berasal dari rekan kerja saya, Nyoman Purnama. Beliau ingin memperoleh data hari-hari libur nasional dan daerah khususnya Bali untuk kebutuhan sistem internal di tempat kerja kami. Namun, saat itu belum ada API yang bisa memenuhi kebutuhan tersebut. Sehingga terciptalah proyek ini untuk menyelesaikan kebutuhan tersebut.
