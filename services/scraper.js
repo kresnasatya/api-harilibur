@@ -65,7 +65,7 @@ async function getDaftarHariLibur(year) {
             })
         }
         // See: https://flaviocopes.com/how-to-sort-array-by-date-javascript/
-        const sortedResult = result.slice().sort((a, b) => b.date - a.date);
+        const sortedResult = result.slice().sort((a, b) => b.formatted_holiday_date - a.formatted_holiday_date);
         for (const item of sortedResult) {
             delete item.formatted_holiday_date;
         }
