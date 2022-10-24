@@ -37,6 +37,7 @@ async function getDaftarHariLibur(year) {
                     var trimSplitTextContent = splitTextContent.map((s) => String.prototype.trim.apply(s));
                     let item = {
                         holiday_date: `${year}-${zeroPad(x)}-${trimSplitTextContent[0]}`,
+                        formatted_holiday_date: new Date(`${year}-${zeroPad(x)}-${trimSplitTextContent[0]}`),
                         holiday_name: trimSplitTextContent[1],
                         is_national_holiday: true
                     };
@@ -53,6 +54,7 @@ async function getDaftarHariLibur(year) {
                         if (trimSplitTextContent[1].includes(key)) {
                             let item = {
                                 holiday_date: `${year}-${zeroPad(x)}-${trimSplitTextContent[0]}`,
+                                formatted_holiday_date: new Date(`${year}-${zeroPad(x)}-${trimSplitTextContent[0]}`),
                                 holiday_name: trimSplitTextContent[1],
                                 is_national_holiday: false
                             };
@@ -63,7 +65,7 @@ async function getDaftarHariLibur(year) {
             })
         }
         // See: https://flaviocopes.com/how-to-sort-array-by-date-javascript/
-        const sortedResult = result.slice().sort((a, b) => b.date - a.date);
+        const sortedResult = result.slice().sort((a, b) => b.formatted_holiday_date - a.formatted_holiday_date);
         for (const item of sortedResult) {
             delete item.formatted_holiday_date;
         }
