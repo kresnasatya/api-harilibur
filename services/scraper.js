@@ -1,12 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios').default;
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import axios from 'axios';
+import { JSDOM } from 'jsdom';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const getHTMLCalendar = (month, year) => {
     return new Promise((resolve, reject) => {
-        axios.get(`http://kalenderbali.org/klasik?bl=${month}&th=${year}`)
+        axios.get(`https://kalenderbali.com?bl=${month}&th=${year}`)
             .then(response => resolve(response.data))
             .catch(error => reject(error));
     });
@@ -16,7 +19,7 @@ function zeroPad(num) {
     return (num.toString().length === 1) ? "0" + num : num;
 }
 
-var keywordFakultatif = ['Galungan', 'Kuningan', 'Siwa Ratri', 'Saraswati'];
+let keywordFakultatif = ['Galungan', 'Kuningan', 'Siwa Ratri', 'Saraswati'];
 
 async function getDaftarHariLibur(year) {
     try {
@@ -25,16 +28,15 @@ async function getDaftarHariLibur(year) {
             console.log(`Mengambil daftar hari libur bulan ke - ${x} tahun ${year}...`);
             await getHTMLCalendar(x, year).then((data) => {
                 const { document } = (new JSDOM(data)).window;
-                document.querySelectorAll('div.libur');
-                var waraList = document.querySelectorAll('div.waralist');
-                var daftarHariPenting = waraList[1];
+                let waraList = document.querySelectorAll('div.waralist');
+                let daftarHariPenting = waraList[1];
 
                 // Daftar hari libur
-                var daftarHariLibur = daftarHariPenting.querySelectorAll('div[style="padding-bottom:7px; color:#FF0000"]');
+                let daftarHariLibur = daftarHariPenting.querySelectorAll('div[style="padding-bottom:7px; color:#FF0000"]');
                 Array.from(daftarHariLibur).forEach(e => {
-                    var textContent = e.textContent;
-                    var splitTextContent = textContent.split(".");
-                    var trimSplitTextContent = splitTextContent.map((s) => String.prototype.trim.apply(s));
+                    let textContent = e.textContent;
+                    let splitTextContent = textContent.split(".");
+                    let trimSplitTextContent = splitTextContent.map((s) => String.prototype.trim.apply(s));
                     let item = {
                         holiday_date: `${year}-${zeroPad(x)}-${trimSplitTextContent[0]}`,
                         formatted_holiday_date: new Date(`${year}-${zeroPad(x)}-${trimSplitTextContent[0]}`),
@@ -45,12 +47,12 @@ async function getDaftarHariLibur(year) {
                 });
 
                 // Daftar hari lainnya
-                var daftarHariLainnya = daftarHariPenting.querySelectorAll('div[style="padding-bottom:7px"]');
+                let daftarHariLainnya = daftarHariPenting.querySelectorAll('div[style="padding-bottom:7px"]');
                 Array.from(daftarHariLainnya).forEach(e => {
-                    var textContent = e.textContent;
-                    var splitTextContent = textContent.split(".");
-                    var trimSplitTextContent = splitTextContent.map((s) => String.prototype.trim.apply(s));
-                    for (key of keywordFakultatif) {
+                    let textContent = e.textContent;
+                    let splitTextContent = textContent.split(".");
+                    let trimSplitTextContent = splitTextContent.map((s) => String.prototype.trim.apply(s));
+                    for (let key of keywordFakultatif) {
                         if (trimSplitTextContent[1].includes(key)) {
                             let item = {
                                 holiday_date: `${year}-${zeroPad(x)}-${trimSplitTextContent[0]}`,
@@ -82,15 +84,13 @@ async function getDaftarHariLibur(year) {
 };
 
 let year = (new Date()).getFullYear() + 1;
-var myArgs = process.argv.slice(2);
+let myArgs = process.argv.slice(2);
 if (myArgs.length > 0) {
     year = parseInt(myArgs[0]);
     if (isNaN(year)) {
         console.log('Yang Anda inputkan adalah bukan tahun!');
-        return true;
     } else if (year < 1900 || year > 3000) {
         console.log('Tahun yang diinputkan tidak boleh kurang dari 1900 atau lebih dari 3000!');
-        return true;
     }
 }
 

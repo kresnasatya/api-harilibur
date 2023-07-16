@@ -2,6 +2,7 @@
   "name": "api-harilibur",
   "version": "1.0.0",
   "description": "API hari libur nasional Indonesia",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "scrape": "node services/scraper.js"
@@ -17,8 +18,11 @@
     "url": "https://github.com/satyakresna/api-harilibur/issues"
   },
   "homepage": "https://github.com/satyakresna/api-harilibur#readme",
-  "dependencies": {
-    "axios": "^0.27.2",
-    "jsdom": "^19.0.0"
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "axios": "^1.4.0",
+    "jsdom": "^22.1.0"
   }
 }

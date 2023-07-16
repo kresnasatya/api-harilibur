@@ -1,6 +1,8 @@
 # API Hari Libur
 
-Tanggal merah di kalender bisa menyenangkan semua orang.
+API hari libur nasional di Indonesia dan hari libur daerah Bali.
+
+> Tanggal merah di kalender mungkin bisa menyenangkan semua orang.
 
 ## Format respon
 
@@ -26,13 +28,13 @@ Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `2
 
 ## Sumber Data
 
-Terima kasih [kalenderbali.org](http://kalenderbali.org) telah menyediakan data hari libur. 🙏🏻
+Terima kasih [kalenderbali.com](http://kalenderbali.com) telah menyediakan data hari libur. 🙏🏻
 
 ## Pertanyaan
 
 Tahun yang saya cari tidak ada, bagaimana caranya?
 
-API ini menggunakan fitur **schedule** dari GitHub Actions dan Workflows. Jadi, setiap tanggal 1 Januari repositori ini akan melakukan scraping hari libur untuk tahun mendatang. Misalnya, sekarang tanggal 1 Januari 2022 maka repositori ini akan melakukan scraping hari libur untuk tahun 2023. Jika tidak ada tahun yang Anda cari silakan [buat isu](https://github.com/satyakresna/api-harilibur/issues) dan saya akan berusaha untuk menambahkan tahun yang dicari. 🙏🏻
+API ini menggunakan fitur **schedule** dari GitHub Actions dan Workflows. Jadi, setiap tanggal 1 Januari repositori ini akan melakukan scraping hari libur untuk tahun mendatang. Misalnya, sekarang tanggal 1 Januari 2022 maka repositori ini akan melakukan scraping hari libur untuk tahun 2023. Jika tidak ada tahun yang Anda cari silakan [buat isu](https://github.com/kresnasatya/api-harilibur/issues) dan saya akan berusaha untuk menambahkan tahun yang dicari. 🙏🏻
 
 ## Apresiasi
 
