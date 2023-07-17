@@ -1,16 +1,20 @@
-const fsPromises = require('fs').promises;
-const { join } = require('path');
+import path from 'path';
+import fsPromises from 'fs/promises';
+import { fileURLToPath } from 'url';
 
-module.exports = async (req, res) => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default async (req, res) => {
     try {
         let result = [];
         let year = (new Date()).getFullYear();
-        let text = await fsPromises.readFile(join(__dirname, '..', 'data', `${year}.json`), 'utf8');
+        let text = await fsPromises.readFile(path.join(__dirname, '..', 'data', `${year}.json`), 'utf8');
 
         let month = req.query.month;
         if (req.query.year) {
             year = req.query.year;
-            text = await fsPromises.readFile(join(__dirname, '..', 'data', `${year}.json`), 'utf8');
+            text = await fsPromises.readFile(path.join(__dirname, '..', 'data', `${year}.json`), 'utf8');
         }
         let parseResult = JSON.parse(text);
 
