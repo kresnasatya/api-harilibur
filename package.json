@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/satyakresna/api-harilibur.git"
+    "url": "git+https://github.com/kresnasatya/api-harilibur.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/satyakresna/api-harilibur/issues"
+    "url": "https://github.com/kresnasatya/api-harilibur/issues"
   },
-  "homepage": "https://github.com/satyakresna/api-harilibur#readme",
+  "homepage": "https://github.com/kresnasatya/api-harilibur#readme",
   "engines": {
     "node": ">=18"
   },

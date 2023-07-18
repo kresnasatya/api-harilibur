@@ -38,7 +38,7 @@ API ini menggunakan fitur **schedule** dari GitHub Actions dan Workflows. Jadi, 
 
 ## Apresiasi
 
-Kalau API Hari Libur ini bermanfaat bagi kamu tolong apresiasi saya di [saweria.co](https://saweria.co/satyakresna) atau [trakteer.id](https://trakteer.id/satyakresna) ya!
+Kalau API Hari Libur ini bermanfaat bagi kamu tolong apresiasi saya di [saweria.co](https://saweria.co/kresnasatya) atau [trakteer.id](https://trakteer.id/kresnasatya) ya!
 
 ## Pengakuan
 
