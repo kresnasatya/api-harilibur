@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import axios from 'axios';
 import { JSDOM } from 'jsdom';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -9,8 +8,8 @@ const __dirname = path.dirname(__filename);
 
 const getHTMLCalendar = (month, year) => {
     return new Promise((resolve, reject) => {
-        axios.get(`https://kalenderbali.com?bl=${month}&th=${year}`)
-            .then(response => resolve(response.data))
+        fetch(`https://kalenderbali.com?bl=${month}&th=${year}`)
+            .then(response => resolve(response.text()))
             .catch(error => reject(error));
     });
 }

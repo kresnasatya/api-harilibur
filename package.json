@@ -22,7 +22,6 @@
     "node": ">=18"
   },
   "devDependencies": {
-    "axios": "^1.4.0",
     "jsdom": "^22.1.0"
   }
 }
