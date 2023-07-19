@@ -25,7 +25,7 @@
     "node": "18"
   },
   "devDependencies": {
-    "jsdom": "^22.1.0",
+    "linkedom": "^0.15.1",
     "vite": "^4.4.4"
   }
 }

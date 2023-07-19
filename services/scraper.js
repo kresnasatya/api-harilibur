@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { JSDOM } from 'jsdom';
+import { parseHTML } from 'linkedom';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,7 +27,7 @@ async function getDaftarHariLibur(year) {
         for (let x = 1; x <= 12; x ++) {
             console.log(`Mengambil daftar hari libur bulan ke - ${x} tahun ${year}...`);
             await getHTMLCalendar(x, year).then((data) => {
-                const { document } = (new JSDOM(data)).window;
+                const { document } = parseHTML(data);
                 let waraList = document.querySelectorAll('div.waralist');
                 let daftarHariPenting = waraList[1];
 
@@ -83,7 +83,7 @@ async function getDaftarHariLibur(year) {
     }
 };
 
-let year = (new Date()).getFullYear() + 1;
+let year = (new Date()).getFullYear() + 2;
 let myArgs = process.argv.slice(2);
 if (myArgs.length > 0) {
     year = parseInt(myArgs[0]);
