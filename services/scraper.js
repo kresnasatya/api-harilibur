@@ -6,12 +6,13 @@ import { JSDOM } from 'jsdom';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getHTMLCalendar = (month, year) => {
-    return new Promise((resolve, reject) => {
-        fetch(`https://kalenderbali.com?bl=${month}&th=${year}`)
-            .then(response => resolve(response.text()))
-            .catch(error => reject(error));
-    });
+const getHTMLCalendar = async (month, year) => {
+    const response = await fetch(`https://kalenderbali.com?bl=${month}&th=${year}`);
+    if (!response.ok) {
+        throw new Error(`An error has occured: ${response.status}`);
+    }
+    const text = await response.text();
+    return text;
 }
 
 function zeroPad(num) {
