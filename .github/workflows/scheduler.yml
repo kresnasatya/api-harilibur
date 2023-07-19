@@ -10,18 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 8
     - name: Setup node
       uses: actions/setup-node@v3
       with:
         node-version: '>=18'
+        cache: 'pnpm'
     - name: Install dependecies
-      run: npm ci
+      run: pnpm install
     - name: Ambil data daftar hari libur
-      run: npm run scrape
+      run: pnpm run scrape
     - name: Commit files
       run: |
         git config --local user.email ${{ secrets.MY_EMAIL }}
-        git config --local user.name "Satya Kresna on Github Actions"
+        git config --local user.name "Kresna Satya on Github Actions"
         git add .
         git commit -m "chore: update scrape data" -a
     - name: Push changes
