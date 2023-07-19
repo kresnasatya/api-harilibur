@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/kresnasatya/api-harilibur#readme",
   "engines": {
-    "node": ">=18"
+    "node": "18"
   },
   "devDependencies": {
     "jsdom": "^22.1.0",
