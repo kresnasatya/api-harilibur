@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/kresnasatya/api-harilibur#readme",
   "engines": {
-    "node": "18"
+    "node": "20.x"
   },
   "devDependencies": {
-    "linkedom": "^0.15.1",
-    "vite": "^4.4.4"
+    "linkedom": "^0.16.6",
+    "vite": "^5.0.11"
   }
 }
