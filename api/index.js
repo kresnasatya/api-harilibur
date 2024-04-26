@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 
 export default async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate');
+    res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=30');
     try {
         let result = [];
         let year = (new Date()).getFullYear();
