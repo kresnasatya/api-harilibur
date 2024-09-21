@@ -16,6 +16,8 @@ API hari libur nasional di Indonesia dan hari libur daerah Bali.
 
 ## Cara Mengakses API
 
+### Vercel
+
 `https://api-harilibur.vercel.app/api` => mendapatkan daftar hari libur tahun sekarang
 
 `https://api-harilibur.vercel.app/api?year=2021` => mendapatkan daftar hari libur di tahun 2021
@@ -23,6 +25,18 @@ API hari libur nasional di Indonesia dan hari libur daerah Bali.
 `https://api-harilibur.vercel.app/api?month=8&year=2021` => mendapatkan daftar hari libur di bulan 8 tahun 2021
 
 `https://api-harilibur.vercel.app/api?month=8` => mendapatkan daftar hari libur di bulan 8 tahun sekarang
+
+Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `200` dengan isian array kosong (`[]`)!
+
+### Netlify
+
+`https://api-harilibur.netlify.app/api` => mendapatkan daftar hari libur tahun sekarang
+
+`https://api-harilibur.netlify.app/api?year=2021` => mendapatkan daftar hari libur di tahun 2021
+
+`https://api-harilibur.netlify.app/api?month=8&year=2021` => mendapatkan daftar hari libur di bulan 8 tahun 2021
+
+`https://api-harilibur.netlify.app/api?month=8` => mendapatkan daftar hari libur di bulan 8 tahun sekarang
 
 Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `200` dengan isian array kosong (`[]`)!
 
