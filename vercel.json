@@ -1,4 +1,5 @@
 {
+    "framework": "vite",
     "headers": [
         {
             "source": "/api/(.*)",
@@ -9,5 +10,21 @@
             ]
         }
     ],
-    "framework": "vite"
+    "rewrites": [
+        {
+            "source": "/api",
+            "destination": "/api/vercel"
+        },
+        {
+            "source": "/api/(.*)",
+            "destination": "/api/vercel/$1"
+        }
+    ],
+    "functions": {
+        "api/vercel/**/*.js": {
+            "memory": 1024,
+            "maxDuration": 10,
+            "includeFiles": "data/**"
+        }
+    }
 }

@@ -1,0 +1,23 @@
+[build]
+    command = "pnpm run build"
+
+[functions]
+    node_bundler = "esbuild"
+    directory = "api/netlify"
+    included_files = ["data/**"]
+
+[[redirects]]
+    from = "/api"
+    to = "/.netlify/functions/index"
+    status = 200
+
+[[redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/:splat"
+    status = 200
+
+# For Single Page Application
+[[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
