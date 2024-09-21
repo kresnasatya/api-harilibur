@@ -1,4 +1,4 @@
-name: Deploy to Vercel
+name: Deploy to Netlify and Vercel
 env:
   VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
@@ -8,7 +8,36 @@ on:
       - main
 
 jobs:
-  Deploy-Production:
+  netlify_deploy_production:
+    name: Deploy to Netlify in production mode
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - uses: pnpm/action-setup@v2
+      name: Install pnpm
+      id: pnpm-install
+      with:
+        version: 8
+        run_install: false
+    - name: Install Netlify CLI
+      run: pnpm install --global netlify@latest
+    - name: Build Project Artifacts
+      run: |
+        pnpm install
+        pnpm run build
+    - name: Deploy Project Artifacts to Netlify
+      run: |
+        netlify deploy --prod \
+          --dir dist \
+          --site ${{ secrets.NETLIFY_PROJECT_ID }} \
+          --auth ${{ secrets.NETLIFY_TOKEN }}
+  vercel_deploy_production:
+    name: Deploy to Vercel in production mode
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
