@@ -1,30 +1,13 @@
 import path from 'path';
-import fsPromises from 'fs/promises';
+import fsPromises from 'fs/promises';   
 
 export async function onRequest(context) {
     try {
-        let result = [];
-        let year = (new Date()).getFullYear();
-        let text = await fsPromises.readFile(path.join(process.cwd(), 'data', `${year}.json`), 'utf8');
+        // let result = [];
 
-        let month = context.request.url.searchParams.get('month');
-        if (context.request.url.searchParams.get('year')) {
-            year = context.request.url.searchParams.get('year');
-            text = await fsPromises.readFile(path.join(process.cwd(), 'data', `${year}.json`), 'utf8');
-        }
-        let parseResult = JSON.parse(text);
-
-        if (month && year) {
-            result = parseResult.filter(item => {
-                if ((new Date(item.holiday_date)).getMonth() + 1 == month) {
-                    return item;
-                }
-            });
-        } else if (year) {
-            result = parseResult;
-        }
-
-        let response = new Response(JSON.stringify(result));
+        let month = context.request.url.searchParams.get('month') || '';
+        let year = context.request.url.searchParams.get('year') || '';
+        let response = new Response(JSON.stringify({ year, month }));
 
         response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400');
         response.headers.set('Content-Type', 'application/json');
