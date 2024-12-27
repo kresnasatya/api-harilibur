@@ -39,11 +39,9 @@ export const handler = async (event, context) => {
         };
     } catch (error) {
         return {
-            statusCode: error.statusCode || 500,
+            statusCode: 200,
             headers,
-            body: JSON.stringify({
-                error: error.message
-            })
+            body: JSON.stringify([])
         }
     }
 }

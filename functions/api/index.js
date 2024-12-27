@@ -26,9 +26,7 @@ export async function onRequest(context) {
 
             return response;
         } else {
-            let response = new Response(JSON.stringify({ error: responseText.statusText }), {
-                status: responseText.status
-            });
+            let response = new Response(JSON.stringify([]));
             response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400');
             response.headers.set('Content-Type', 'application/json');
             response.headers.set('Access-Control-Allow-Origin', '*');
@@ -37,9 +35,7 @@ export async function onRequest(context) {
             return response;
         }
     } catch (error) {
-        let response = new Response(JSON.stringify({ error: error.message }), {
-            status: error.statusCode || 500
-        });
+        let response = new Response(JSON.stringify([]));
 
         response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400');
         response.headers.set('Content-Type', 'application/json');
