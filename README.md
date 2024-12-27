@@ -16,6 +16,18 @@ API hari libur nasional di Indonesia dan hari libur daerah Bali.
 
 ## Cara Mengakses API
 
+### Cloudflare
+
+`https://api-harilibur.pages.dev/api` => mendapatkan daftar hari libur tahun sekarang
+
+`https://api-harilibur.pages.dev/api?year=2021` => mendapatkan daftar hari libur di tahun 2021
+
+`https://api-harilibur.pages.dev/api?month=8&year=2021` => mendapatkan daftar hari libur di bulan 8 tahun 2021
+
+`https://api-harilibur.pages.dev/api?month=8` => mendapatkan daftar hari libur di bulan 8 tahun sekarang
+
+Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `200` dengan isian array kosong (`[]`)!
+
 ### Netlify
 
 `https://api-harilibur.netlify.app/api` => mendapatkan daftar hari libur tahun sekarang
@@ -52,7 +64,7 @@ API ini menggunakan fitur **schedule** dari GitHub Actions dan Workflows. Jadi, 
 
 ## Apresiasi
 
-Kalau API Hari Libur ini bermanfaat bagi kamu tolong apresiasi saya di [saweria.co](https://saweria.co/kresnasatya) atau [trakteer.id](https://trakteer.id/kresnasatya) ya!
+Kalau API Hari Libur ini bermanfaat bagi kamu tolong apresiasi saya di [trakteer.id](https://trakteer.id/kresnasatya) ya!
 
 ## Pengakuan
 
