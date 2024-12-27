@@ -3,7 +3,7 @@ import fsPromises from 'fs/promises';
 
 export default async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Cache-Control', 's-maxage=600, stale-while-revalidate=30');
+    res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=86400');
     try {
         let result = [];
         let year = (new Date()).getFullYear();
