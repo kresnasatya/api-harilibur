@@ -18,7 +18,7 @@ export async function onRequest(context) {
                 });
             }
          
-            let response = new Response(data);
+            let response = new Response(JSON.stringify(data));
             response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400');
             response.headers.set('Content-Type', 'application/json');
             response.headers.set('Access-Control-Allow-Origin', '*');
