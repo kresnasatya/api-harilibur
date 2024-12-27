@@ -6,6 +6,7 @@ const headers = {
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
     'Content-Type': 'application/json',
+    'Cache-Control': 'public, max-age=0, s-maxage=86400'
 };
 
 export const handler = async (event, context) => {
