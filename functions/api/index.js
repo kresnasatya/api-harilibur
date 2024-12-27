@@ -4,9 +4,11 @@
 export async function onRequest(context) {
     try {
         // let result = [];
+        const url = new URL(context.request.url);
 
-        let month = context.request.url.searchParams.get('month') || '';
-        let year = context.request.url.searchParams.get('year') || '';
+        // Get query parameters using URLSearchParams
+        const month = url.searchParams.get('month') || '';
+        const year = url.searchParams.get('year') || '';
         let response = new Response(JSON.stringify({ year, month }));
 
         response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400');
