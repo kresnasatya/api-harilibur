@@ -8,7 +8,7 @@ export async function onRequest(context) {
 
         // Get query parameters using URLSearchParams
         const month = url.searchParams.get('month') || '';
-        const year = url.searchParams.get('year') || '';
+        const year = url.searchParams.get('year') || (new Date()).getFullYear();
         let response = new Response(JSON.stringify({ year, month }));
 
         response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=86400');
