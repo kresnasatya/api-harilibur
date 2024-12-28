@@ -26,8 +26,8 @@
     "node": "20.x"
   },
   "devDependencies": {
-    "linkedom": "^0.16.6",
-    "vite": "^5.0.11",
+    "linkedom": "^0.18",
+    "vite": "^6.0",
     "wrangler": "^3.99.0"
   }
 }
