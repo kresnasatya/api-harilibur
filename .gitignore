@@ -4,3 +4,6 @@ node_modules/
 
 # Local Netlify folder
 .netlify
+
+# Wrangler from Cloudflare
+.wrangler

@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scrape": "node services/scraper.js"
+    "scrape": "node services/scraper.js",
+    "pages:dev": "wrangler pages dev"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "linkedom": "^0.16.6",
-    "vite": "^5.0.11"
+    "vite": "^5.0.11",
+    "wrangler": "^3.99.0"
   }
 }
