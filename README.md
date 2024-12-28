@@ -4,9 +4,28 @@ API hari libur nasional di Indonesia dan hari libur daerah Bali.
 
 > Tanggal merah di kalender mungkin bisa menyenangkan semua orang.
 
+## Cara Menjalankan Kode Program
+
+Untuk menjalankan kode program ini di mode development maka Anda harus:
+
+- Memilki akun di tiga platform antara lain Cloudflare, Netlify, dan Vercel.
+- Menginstal NodeJS dan PNPM (sejenis NPM package manager).
+- Menginstal CLI untuk Netlify dan Vercel.
+
+Berikutnya, arahkan terminal Anda ke kode program dan jalankan setiap baris perintah di bawah ini di setiap tab terminal.
+
+```sh
+# Tab terminal pertama (Cloudflare)
+pnpm run pages:dev
+# Tab terminal kedua
+netlify dev
+# Tab terminal ketiga
+vercel dev
+```
+
 ## Format respon
 
-```
+```json
 {
   holiday_date: "2021-05-13",
   holiday_name: "Hari Paskah",
@@ -16,39 +35,18 @@ API hari libur nasional di Indonesia dan hari libur daerah Bali.
 
 ## Cara Mengakses API
 
-### Cloudflare
+Silakan gunakan salah satu dari 3 domain di bawah ini untuk mengakses API hari libur.
 
-`https://api-harilibur.pages.dev/api` => mendapatkan daftar hari libur tahun sekarang
+- Cloudflare: `https://api-harilibur.pages.dev`
+- Netlify: `https://api-harilibur.netlify.app`
+- Vercel: `https://api-harilibur.vercel.app`
 
-`https://api-harilibur.pages.dev/api?year=2021` => mendapatkan daftar hari libur di tahun 2021
+### Endpoint
 
-`https://api-harilibur.pages.dev/api?month=8&year=2021` => mendapatkan daftar hari libur di bulan 8 tahun 2021
-
-`https://api-harilibur.pages.dev/api?month=8` => mendapatkan daftar hari libur di bulan 8 tahun sekarang
-
-Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `200` dengan isian array kosong (`[]`)!
-
-### Netlify
-
-`https://api-harilibur.netlify.app/api` => mendapatkan daftar hari libur tahun sekarang
-
-`https://api-harilibur.netlify.app/api?year=2021` => mendapatkan daftar hari libur di tahun 2021
-
-`https://api-harilibur.netlify.app/api?month=8&year=2021` => mendapatkan daftar hari libur di bulan 8 tahun 2021
-
-`https://api-harilibur.netlify.app/api?month=8` => mendapatkan daftar hari libur di bulan 8 tahun sekarang
-
-Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `200` dengan isian array kosong (`[]`)!
-
-### Vercel
-
-`https://api-harilibur.vercel.app/api` => mendapatkan daftar hari libur tahun sekarang
-
-`https://api-harilibur.vercel.app/api?year=2021` => mendapatkan daftar hari libur di tahun 2021
-
-`https://api-harilibur.vercel.app/api?month=8&year=2021` => mendapatkan daftar hari libur di bulan 8 tahun 2021
-
-`https://api-harilibur.vercel.app/api?month=8` => mendapatkan daftar hari libur di bulan 8 tahun sekarang
+- `/api` => Mendapatkan daftar hari libur tahun sekarang.
+- `/api?year=2020` => Mendapatkan daftar hari libur di tahun 2020.
+- `/api?month=8&year=2020` => Mendapatkan daftar hari libur di bulan 8 tahun 2020.
+- `/api?month=8` => Mendapatkan daftar hari libur di bulan 8 tahun sekarang.
 
 Jika mengakses API di luar cara tersebut maka tetap mengembalikan code status `200` dengan isian array kosong (`[]`)!
 
