@@ -27,9 +27,9 @@ vercel dev
 
 ```json
 {
-  holiday_date: "2021-05-13",
-  holiday_name: "Hari Paskah",
-  is_national_holiday: true or false
+  holiday_date: "2021-01-01",
+  holiday_name: "Tahun Baru Masehi",
+  is_national_holiday: true
 }
 ```
 
@@ -37,9 +37,9 @@ vercel dev
 
 Silakan gunakan salah satu dari 3 domain di bawah ini untuk mengakses API hari libur.
 
-- Cloudflare: `https://api-harilibur.pages.dev`
-- Netlify: `https://api-harilibur.netlify.app`
-- Vercel: `https://api-harilibur.vercel.app`
+- Cloudflare: https://api-harilibur.pages.dev
+- Netlify: https://api-harilibur.netlify.app
+- Vercel: https://api-harilibur.vercel.app
 
 ### Endpoint
 
