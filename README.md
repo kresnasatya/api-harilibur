@@ -25,7 +25,7 @@ vercel dev
 
 ## Format respon
 
-```json
+```
 {
   holiday_date: "2021-01-01",
   holiday_name: "Tahun Baru Masehi",
